@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 15px;
+  padding: 15px;
+  background-image:url(gif3.gif);
+          background-repeat: no-repeat;
+          background-size: cover;
+}
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding:15px;
+  font-size:20px;
+}
+
+.item1 {
+  grid-column: 1 ;
+  grid-row: 1 ;
+  background-image:url(7.jpg);
+          background-repeat: no-repeat;
+          background-size: cover;
+}
+.item2 {
+  grid-column: 2 / span 4;
+  grid-row: 1 ;
+  background-image:url(8.jpg);
+          background-repeat: no-repeat;
+          background-size: cover;
+}
+</style>
+</head>
+<body>
+<div class="grid-container">
+  <div class="grid-item item1">
+        <p  style="text-align:center;"><button type="button"onclick="document.getElementById('demo').innerHTML = Date()" > Date & Time.</button></p>
+        <p id="demo"></p>
+    <p style="text-align: center;"><img  src="1.png" width="300" height="300"></p>
+    <h3 style="color: rgb(2, 71, 8);"><b><em>Don't waste your valuable time,<br>because you can't bring it back again </em></b></h3>
+  </div>
+ <div class="grid-item item2">
+  <head>
+    <style>
+      input[type=text],input[type=email],input[type=password], select {
+        width: 60%;
+        padding: 12px 20px;
+        margin: 10px 9;
+        display: inline-block;
+        border: 5px solid rgb(69, 72, 77);
+        border-radius: 20px;
+        box-sizing: border-box;
+      }
+      #btn {
+        width: 30%;
+        background-color: #3b7917;
+        color: rgb(252, 248, 248);
+        padding: 14px 20px;
+        margin: 9px 4;
+        border: 4px solid rgb(59, 75, 44);
+        border-radius: 10px;
+        cursor: pointer;
+      }
+      
+      #btn:hover {
+        background-color:rgb(9, 247, 9);
+      }
+         
+      div {
+        border-radius: 100px;
+        padding: 50px;
+        background-image:url(2.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      </style>
+      <h3 style="text-align: center;">Use your Login id & Password;</h3>
+      <div >
+        <form id="form" class="form"  action="index.html">
+          <p style="color: cornsilk; text-align: center;"><label>Login ID</label>
+          <input type="text" id="uname"  placeholder="Your Login id...."onkeydown="allLetter()"oninput="form1()"></p>
+          <span id="texts"></span>
+          <p style="color: cornsilk; text-align: center;"><label>Password</label>
+          <input type="password" id="uid" placeholder="your secrete code...."onkeydown="password()"oninput="form1()"></p>
+          <span id="number"></span>
+          <p style="color: cornsilk;text-align: center;"><label>Email ID</label>
+          <input type="email" id="uemail"  placeholder="Your email id...."onkeydown="email()"oninput="form1()"></p>
+          <span id="mail"></span>
+          <p style="color: cornsilk;text-align: center;"><label >Mob Num</label>
+             <select style="width: 16%;">
+              <option>374</option>
+              <option>91</option>
+              <option>61</option>
+             </select>
+            <input type="text" id="unumb" placeholder="Your Mob Num...."onkeydown="mobno()" oninput="form4()"style="width:43%;"></p>
+          <span id="mobnumb"></span>
+          <p style="color: cornsilk;text-align: center;"><label>Country</label>
+          <select id="country">
+            <option>USA</option>
+            <option>India</option>
+            <option>Australia</option>
+          </select>
+        </p>
+          <p style="text-align: center;"><button id="btn" type="submit" class="submit" onclick="parent.location='index.html'" disabled>submit</button></p>
+    </form>
+  </div>
+      <script>
+             var letters = /^[A-Za-z'.\s]{3,50}$/;
+               var numbers=/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W]).{6,20}/;
+               var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+               var phoneno = /^([6-9]{1})(\d{9})$/;
+                function allLetter()
+                { 
+                  setTimeout(allLetter,500);
+                var text = document.getElementById("texts");
+                var uname = document.getElementById("uname").value;
+                if(uname.match(letters))
+                  {
+                   text.innerHTML = "your name is valid"
+                   text.style.color = "#00ff00";
+                  }
+                else
+                  {
+                   text.innerHTML = "your name is invalid"
+                   text.style.color = "#ff0000";
+                  }
+                  }
+     
+                function password()
+                 {
+                    setTimeout(password,500);
+    
+                 var text=document.getElementById("number");
+                 var uid=document.getElementById("uid").value;
+                 if(uid.match(numbers))
+                 {
+                   text.innerHTML="your password is valid";
+                   text.style.color="#00ff00";
+                 }
+                 else
+                 {
+                   text.innerHTML="your password is invalid";
+                   text.style.color="#ff0000";
+                 }
+                 }
+                 function email()
+           {
+          setTimeout(email,500);
+    
+             var text=document.getElementById("mail");
+             var uemail=document.getElementById("uemail").value;
+             if(uemail.match(mailformat))
+             {
+               text.innerHTML="your email is valid";
+               text.style.color="#00ff00";
+             }
+             else
+             {
+             text.innerHTML="your email is invalid";
+             text.style.color="#ff0000";
+             }
+            }
+         function mobno()
+         {
+          setTimeout(mobno,500);
+    
+           var text=document.getElementById("mobnumb");
+           var unumb=document.getElementById("unumb").value;
+           if(unumb.match(phoneno))
+           {
+             text.innerHTML="you numer is valid";
+             text.style.color="#00ff00";
+           }
+           else
+           {
+             text.innerHTML="your number is invalid";
+             text.style.color="#ff0000";
+           }
+         }
+        var uid=document.getElementById("uname");
+        var vid=document.getElementById("uid");
+        var vnumb=document.getElementById("unumb");
+        var vemail=document.getElementById("uemail");
+        var button = document.querySelector('.submit');
+    
+         function form1()
+        {
+          var btn=document.getElementById("btn");
+          if (uid.value !== "" && letters.test(uid.value)&&
+          vid.value !== "" && numbers.test(vid.value)&&
+          vemail.value !== "" && mailformat.test(vemail.value)&&
+          vemail.value !== "" && mailformat.test(vemail.value))
+          {
+            button.disabled=false;
+          }
+          else
+          {
+            button.disabled=true;
+    
+          }
+        }
+      </script>
+</div>
+  </div>
+</body>
+</html>
+
+
+
+
+
+
